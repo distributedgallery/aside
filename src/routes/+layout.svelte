@@ -1,53 +1,68 @@
 <script>
-	import Header from './Header.svelte';
-	import './styles.css';
+	import '../reset.scss';
+	import '../app.scss';
 </script>
 
 <div class="app">
-	<Header />
+	<header class="contained padded-sm">
+		<h1><span>distributed@gallery</span> >_ aside·eth</h1>
+	</header>
 
-	<main>
+	<main class="contained padded-sm">
 		<slot />
 	</main>
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+	<footer></footer>
 </div>
 
-<style>
+<style lang="scss">
 	.app {
 		display: flex;
 		flex-direction: column;
+		justify-content: start;
 		min-height: 100vh;
 	}
 
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
+	@keyframes blink {
+		0% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
+	header {
+		margin-bottom: $space-md;
 	}
 
-	footer a {
-		font-weight: bold;
-	}
+	h1 {
+		position: relative;
+		width: fit-content;
+		// color: $accent;
+		// font-weight: bold;
 
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
+		span {
+			// background-color: #2fc4b4;
+			color: $terminal;
+			// font-weight: bold;
+
+			// color: $dark;
+		}
+
+		&::after {
+			content: '';
+			width: 5px;
+			height: 1em;
+			position: absolute;
+			top: 0;
+			right: -10px;
+			background: $accent;
+			display: inline-block;
+			animation: 1s blink step-end infinite;
 		}
 	}
 </style>

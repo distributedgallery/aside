@@ -1,40 +1,38 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>aside·eth</title>
+	<meta name="description" content="aside·eth" />
 </svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+<ul>
+	<li><a href="/0x01">Obvious x Ivona Tau</a></li>
+	<li>Jared</li>
+	<li>Primavera De Filippi</li>
+</ul>
 
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
-
-<style>
+<style lang="scss">
 	section {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		flex: 0.6;
+	}
+
+	ul {
+		li {
+			margin-top: $space-sm;
+
+			&:first-of-type {
+				margin-top: 0;
+			}
+
+			&::before {
+				content: '>_ ';
+			}
+		}
 	}
 
 	h1 {
