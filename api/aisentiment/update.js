@@ -43,22 +43,22 @@ function isAuthorized(request) {
 export default async function handler(request, response) {
 	try {
 		if (!isAuthorized(request)) {
-			// return response.status(401).json({ error: 'Unauthorized request' });
+			return response.status(401).json({ error: 'Unauthorized request' });
 		}
 
-		// const pros = await count(PROS);
-		// const cons = await count(CONS);
+		const pros = await count(PROS);
+		const cons = await count(CONS);
 
-		// if (pros === 0 && cons === 0) {
-		// 	throw new Error('No tweets found');
-		// }
+		if (pros === 0 && cons === 0) {
+			throw new Error('No tweets found');
+		}
 
-		// const sentiment = (pros / (pros + cons)).toFixed(2) * 100;
-		const sentiment = Math.random().toFixed(2) * 100;
-
-		// await kv.zadd('sentiments', { score: timestamp, member: sentiment });
+		const sentiment = (pros / (pros + cons)).toFixed(2) * 100;
 		await sql`INSERT INTO Sentiments (timestamp, sentiment, query_pro, query_con) VALUES (CURRENT_TIMESTAMP, ${sentiment}, ${query(PROS)}, ${query(CONS)});`;
-		return response.status(200).json({ sentiment: sentiment });
+
+		return response
+			.status(200)
+			.json({ sentiment: sentiment, query_pro: query(PROS), query_con: query(CONS) });
 	} catch (error) {
 		console.log(error);
 		return response.status(500).json({ error: error.message });

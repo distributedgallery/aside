@@ -8,8 +8,6 @@
 
 <ul>
 	<li><a href="/0x01">Obvious x Ivona Tau</a></li>
-	<li>Jared</li>
-	<li>Primavera De Filippi</li>
 </ul>
 
 <style lang="scss">

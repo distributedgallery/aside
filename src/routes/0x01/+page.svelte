@@ -1,6 +1,4 @@
 <script>
-	import { sql } from '@vercel/postgres';
-
 	export let data;
 </script>
 
@@ -10,7 +8,7 @@
 </svelte:head>
 
 <p>
-	>_ Here is the history of the public sentiment over AI, as registered regurlarly for use on the
+	>_ Here is the history of the public sentiment over AI, as registered regularly for use on the
 	Ethereum blockchain.
 </p>
 <p>
@@ -22,11 +20,15 @@
 
 <table>
 	<thead>
-		<tr><th>timestamp</th><th>AI Sentiment</th></tr>
+		<tr><th>timestamp</th><th>AI sentiment</th><th>query [pro]</th><th>query [con]</th></tr>
 	</thead>
 	<tbody>
-		{#each data.sentiments as { timestamp, sentiment } (id)}
-			<tr><td>{timestamp}</td><td>{sentiment}</td></tr>
+		{#each data.sentiments as { timestamp, sentiment, query_pro, query_con } (id)}
+			<tr
+				><td>{new Date(timestamp).toLocaleString()}</td><td>{sentiment}</td><td>{query_pro}</td><td
+					>{query_con}</td
+				></tr
+			>
 		{/each}
 	</tbody>
 </table>
