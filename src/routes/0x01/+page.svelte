@@ -23,7 +23,7 @@
 		<tr><th>timestamp</th><th>AI sentiment</th><th>query [pro]</th><th>query [con]</th></tr>
 	</thead>
 	<tbody>
-		{#each data.sentiments as { timestamp, sentiment, query_pro, query_con } (id)}
+		{#each data.sentiments as { timestamp, sentiment, query_pro, query_con } (timestamp)}
 			<tr
 				><td>{new Date(timestamp).toLocaleString()}</td><td>{sentiment}</td><td>{query_pro}</td><td
 					>{query_con}</td
