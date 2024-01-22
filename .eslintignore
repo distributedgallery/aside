@@ -1,13 +1,24 @@
+# macOS
 .DS_Store
+
+# node
 node_modules
-/build
-/.svelte-kit
-/package
+package
+
+# svelte
+build
+.svelte-kit
+
+# env
 .env
 .env.*
 !.env.example
 
-# Ignore files for PNPM, NPM and YARN
+# vercel
+.vercel
+.output
+
+# PNPM, NPM and YARN
 pnpm-lock.yaml
 package-lock.json
 yarn.lock

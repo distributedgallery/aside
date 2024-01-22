@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <svelte:head>
 	<title>aside·eth</title>
 	<meta name="description" content="aside·eth" />
@@ -11,14 +8,6 @@
 </ul>
 
 <style lang="scss">
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
 	ul {
 		li {
 			margin-top: $space-sm;

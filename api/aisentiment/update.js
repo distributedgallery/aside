@@ -2,8 +2,16 @@ import { sql } from '@vercel/postgres';
 import needle from 'needle';
 
 const ENDPOINT = 'https://api.twitter.com/2/tweets/counts/recent';
-const PROS = ['#aiforgood', '#ai4good'];
-const CONS = ['#aiforbad', '#ai4bad'];
+const PROS = ['#AIPositive', '#AIForGood', '#AIOptimism', '#AIHope'];
+const CONS = [
+	'#AIConcerns',
+	'#AIThreat',
+	'#AIFears',
+	'#AIEthics',
+	'#AIDystopia',
+	'#AIUnemployment',
+	'#AIWar'
+];
 
 function query(hashtags) {
 	let q = '';
