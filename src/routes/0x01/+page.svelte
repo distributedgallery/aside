@@ -1,3 +1,9 @@
+<script>
+	import { sql } from '@vercel/postgres';
+
+	export let data;
+</script>
+
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About this app" />
@@ -19,7 +25,9 @@
 		<tr><th>timestamp</th><th>AI Sentiment</th></tr>
 	</thead>
 	<tbody>
-		<tr><td>2021-04-01 00:00:00</td><td>0.5</td></tr>
+		{#each data.sentiments as { timestamp, sentiment } (id)}
+			<tr><td>{timestamp}</td><td>{sentiment}</td></tr>
+		{/each}
 	</tbody>
 </table>
 
