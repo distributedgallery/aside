@@ -5,3 +5,15 @@ $terminal: #2fc4b4;
 $space-sm: 0.5rem;
 $space-md: 1rem;
 $space-lg: 2rem;
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

@@ -41,7 +41,7 @@ async function count(hashtags) {
 		return response.body.meta.total_tweet_count;
 	}
 
-	throw new Error('Unsuccessful Twitter request');
+	throw new Error(response);
 }
 
 function isAuthorized(request) {

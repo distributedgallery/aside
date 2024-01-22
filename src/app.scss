@@ -17,9 +17,9 @@
 html,
 body {
 	background-color: $dark;
+	color: $light;
 	font-family: 'Supply Mono', monospace;
 	font-size: 16px;
-	color: $light;
 
 	&:before {
 		background: repeating-linear-gradient(
@@ -31,22 +31,53 @@ body {
 		);
 		content: '';
 		height: 100vh;
+		width: 100vw;
 		pointer-events: none;
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100vw;
+		z-index: 9999;
 	}
 }
 
-.contained {
-	width: 980px;
-	margin-right: auto;
-	margin-left: auto;
+ul {
+	li {
+		margin-top: $space-sm;
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+
+		&::before {
+			content: '↳ ';
+		}
+	}
 }
 
-.padded-sm {
-	padding: $space-sm;
+section {
+	margin-top: $space-lg;
+	margin-bottom: $space-lg;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+p {
+	margin-top: $space-sm;
+	margin-bottom: $space-sm;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-top: 0;
+	}
 }
 
 a {
@@ -57,4 +88,42 @@ a {
 		background-color: $accent;
 		color: $light;
 	}
+}
+
+table {
+	border-collapse: collapse;
+	border-bottom: 1px solid $terminal;
+	text-align: left;
+
+	th {
+		color: $terminal;
+		padding: $space-sm;
+		border: 1px solid $terminal;
+	}
+	td {
+		border-left: 1px solid $terminal;
+		border-right: 1px solid $terminal;
+		padding: $space-sm;
+	}
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+	margin: $space-md;
+	padding: $space-lg 0;
+	height: calc(100vh - 2 * $space-md);
+	overflow: scroll;
+
+	background:
+		linear-gradient(to right, $terminal 1px, transparent 1px) 0 0,
+		linear-gradient(to right, $terminal 1px, transparent 1px) 0 100%,
+		linear-gradient(to left, $terminal 1px, transparent 1px) 100% 0,
+		linear-gradient(to left, $terminal 1px, transparent 1px) 100% 100%,
+		linear-gradient(to bottom, $terminal 1px, transparent 1px) 0 0,
+		linear-gradient(to bottom, $terminal 1px, transparent 1px) 100% 0,
+		linear-gradient(to top, $terminal 1px, transparent 1px) 0 100%,
+		linear-gradient(to top, $terminal 1px, transparent 1px) 100% 100%;
+	background-repeat: no-repeat;
+	background-size: 10px 10px;
 }
