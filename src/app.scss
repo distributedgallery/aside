@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @font-face {
 	font-family: 'Supply Mono';
 	src: url(/fonts/PPSupplyMono-Ultralight.otf) format('opentype');
@@ -40,17 +42,46 @@ body {
 	}
 }
 
+::selection {
+	color: $terminal;
+	background: $dark;
+}
+
 ul {
-	li {
-		margin-top: $space-sm;
+}
 
-		&:first-of-type {
-			margin-top: 0;
-		}
+h1:not(header *),
+h2,
+h3 {
+	// @include cornered();
 
-		&::before {
-			content: '↳ ';
-		}
+	color: $yellow;
+	margin-top: $space-lg;
+	margin-bottom: $space-sm;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h1:not(header *) {
+	&::before {
+		content: '>_ #';
+		margin-right: $space-sm;
+	}
+}
+
+h2 {
+	&::before {
+		content: '>_ ##';
+		margin-right: $space-sm;
+	}
+}
+
+h3 {
+	&::before {
+		content: '>_ ###';
+		margin-right: $space-sm;
 	}
 }
 
@@ -71,50 +102,92 @@ p {
 	margin-top: $space-sm;
 	margin-bottom: $space-sm;
 
+	&::before {
+		content: '>_';
+		// color: $accent;
+		margin-right: $space-sm;
+	}
+
 	&:first-child {
 		margin-top: 0;
 	}
 
 	&:last-child {
-		margin-top: 0;
+		margin-bottom: 0;
 	}
 }
 
 a {
-	color: $accent;
+	color: $terminal;
 	text-decoration: none;
+
+	text-decoration: none;
+	// text-decoration-style: dashed;
+	border-bottom: 1px dashed rgba($terminal, 1);
 
 	&:hover {
 		background-color: $accent;
+		border-bottom: none;
 		color: $light;
+		text-decoration: none;
 	}
 }
 
 table {
-	border-collapse: collapse;
+	// border-collapse: collapse;
+	border-spacing: $space-sm;
 	border-bottom: 1px solid $terminal;
 	text-align: left;
+	border-collapse: separate;
+	border-spacing: $space-sm $space-sm;
 
 	th {
+		@include cornered();
+		border: 0.5px dashed rgba($terminal, 0.2);
+
 		color: $terminal;
 		padding: $space-sm;
-		border: 1px solid $terminal;
+
+		div {
+		}
 	}
 	td {
-		border-left: 1px solid $terminal;
-		border-right: 1px solid $terminal;
+		// border-left: 1px solid $terminal;
+		// border-right: 1px solid $terminal;
 		padding: $space-sm;
+	}
+
+	tr {
+		td {
+			border: 0.5px dashed rgba($terminal, 0.2);
+			padding: $space-sm $space-sm;
+		}
+
+		&:hover {
+			color: $terminal;
+			td {
+				@include cornered();
+			}
+		}
 	}
 }
 
 .app {
 	display: flex;
 	flex-direction: column;
-	margin: $space-md;
-	padding: $space-lg 0;
-	height: calc(100vh - 2 * $space-md);
+	height: calc(100vh);
 	overflow: scroll;
+	padding: $space-md;
+	display: grid;
+	grid-template-columns: minmax(10%, min-content) 1fr;
+	grid-template-rows: min-content 1fr;
+	gap: $space-md $space-md;
+	grid-template-areas:
+		'header header'
+		'nav main';
+}
 
+.squared {
 	background:
 		linear-gradient(to right, $terminal 1px, transparent 1px) 0 0,
 		linear-gradient(to right, $terminal 1px, transparent 1px) 0 100%,
@@ -126,4 +199,5 @@ table {
 		linear-gradient(to top, $terminal 1px, transparent 1px) 100% 100%;
 	background-repeat: no-repeat;
 	background-size: 10px 10px;
+	padding: $space-md $space-sm;
 }

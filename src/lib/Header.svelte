@@ -1,19 +1,17 @@
-<script>
-	import { page } from '$app/stores';
-</script>
-
-<header>
+<header class="squared">
 	<h1>
 		<span>>_ distributed@gallery</span> >_ aside·eth
-		{#if $page.url.pathname !== '/'}
-			>_ <a href="/">go back</a>
-		{/if}
 	</h1>
 </header>
 
 <style lang="scss">
 	header {
-		margin-bottom: $space-lg;
+		// margin-bottom: $space-lg;
+
+		@include section('header');
+		border: 0.5px dashed rgba($terminal, 0.2);
+
+		grid-area: header;
 
 		h1 {
 			position: relative;

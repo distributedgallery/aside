@@ -3,15 +3,25 @@
 </script>
 
 <section>
+	<h1>Obvious x Ivona Tau</h1>
+
 	<p>
-		>_ Here is the history of the public sentiment over AI, as registered regularly for use on the
-		Ethereum blockchain.
+		Obvious and Ivona Tau have chosen to collaborate on a series of artworks whose content and
+		unlock is related to the public sentiment over AI.
 	</p>
+
+	<h2>The public AI sentiment</h2>
 	<p>
-		>_ This sentiment is built upon the observation of a set of hashtags on the <a
+		The public sentiment over AI is built upon the observation of a set of hashtags on the <a
 			href="https://x.com"
 			target="_blank">X social network</a
 		>.
+	</p>
+
+	<h2>Data history</h2>
+	<p>
+		Here is the history of the public sentiment over AI, as registered regularly for use on the
+		Ethereum blockchain.
 	</p>
 </section>
 

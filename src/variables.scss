@@ -2,6 +2,8 @@ $dark: #1e162d;
 $light: #ffffff;
 $accent: #ff1c65;
 $terminal: #2fc4b4;
+$yellow: #ecc48d;
+$blue: #1864ab;
 $space-sm: 0.5rem;
 $space-md: 1rem;
 $space-lg: 2rem;
@@ -16,4 +18,45 @@ $space-lg: 2rem;
 	100% {
 		opacity: 1;
 	}
+}
+
+@mixin section($title) {
+	position: relative;
+
+	&::before {
+		content: '>_{' + $title + '}';
+		color: $yellow;
+		font-size: 0.7rem;
+		position: absolute;
+		top: calc(-0.6em);
+		left: 15px;
+	}
+}
+
+@mixin cornered($size: 10px, $where: all) {
+	border: 0.5px dashed rgba($terminal, 0.2);
+
+	@if $where == all {
+		background:
+			linear-gradient(to right, $terminal 1px, transparent 1px) 0 0,
+			linear-gradient(to right, $terminal 1px, transparent 1px) 0 100%,
+			linear-gradient(to left, $terminal 1px, transparent 1px) 100% 0,
+			linear-gradient(to left, $terminal 1px, transparent 1px) 100% 100%,
+			linear-gradient(to bottom, $terminal 1px, transparent 1px) 0 0,
+			linear-gradient(to bottom, $terminal 1px, transparent 1px) 100% 0,
+			linear-gradient(to top, $terminal 1px, transparent 1px) 0 100%,
+			linear-gradient(to top, $terminal 1px, transparent 1px) 100% 100%;
+	} @else if $where == top {
+		background:
+			linear-gradient(to right, $terminal 1px, transparent 1px) 0 0,
+			linear-gradient(to left, $terminal 1px, transparent 1px) 100% 0,
+			linear-gradient(to bottom, $terminal 1px, transparent 1px) 0 0,
+			linear-gradient(to bottom, $terminal 1px, transparent 1px) 100% 0;
+	}
+	background-repeat: no-repeat;
+	background-size: $size $size;
+}
+
+@mixin padded {
+	padding: $space-md $space-sm;
 }
