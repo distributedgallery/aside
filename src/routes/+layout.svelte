@@ -2,6 +2,7 @@
 	import '../reset.scss';
 	import '../app.scss';
 	import Header from '$lib/Header.svelte';
+	import Main from '$lib/Main.svelte';
 	import Nav from '$lib/Nav.svelte';
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
@@ -9,21 +10,14 @@
 </script>
 
 <div class="app">
-	<Header />
-	<Nav>
-		<li><a href="/0x01">Obivous x Ivona Tau</a></li>
-	</Nav>
-	<main class="squared">
+	<Header>aside·eth</Header>
+	<Nav
+		links={[
+			{ name: 'Obvious x Ivona Tau', path: '/0x01' },
+			{ name: 'Anna Ridler', path: '/0x02' }
+		]}
+	/>
+	<Main>
 		<slot />
-	</main>
+	</Main>
 </div>
-
-<style lang="scss">
-	main {
-		border: 0.5px dashed rgba($terminal, 0.2);
-
-		@include section('main');
-		grid-area: main;
-		justify-self: stretch;
-	}
-</style>

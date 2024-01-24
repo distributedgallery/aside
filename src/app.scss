@@ -18,45 +18,59 @@
 
 html,
 body {
-	background-color: $dark;
-	color: $light;
+	background-color: $black;
+	color: $white;
 	font-family: 'Supply Mono', monospace;
-	font-size: 16px;
+	font-size: 14px;
+
+	font-weight: 400;
+
+	@media only screen and (min-width: 760px) {
+		font-size: 16px;
+	}
 
 	&:before {
-		background: repeating-linear-gradient(
-			0deg,
-			rgba($terminal, 0.15),
-			rgba($terminal, 0.15) 1px,
-			transparent 1px,
-			transparent 2px
-		);
-		content: '';
-		height: 100vh;
-		width: 100vw;
-		pointer-events: none;
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 9999;
+		@include scanlines();
+	}
+}
+
+.app {
+	height: calc(100vh);
+	display: grid;
+	padding: $space-md;
+	overflow: auto;
+
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content min-content 1fr;
+	gap: $space-md $space-md;
+	grid-template-areas:
+		'header'
+		'nav'
+		'main';
+
+	@media only screen and (min-width: 760px) {
+		grid-template-columns: minmax(10%, max-content) 1fr;
+		grid-template-rows: min-content 1fr;
+		gap: $space-md $space-md;
+		grid-template-areas:
+			'header header'
+			'nav main';
 	}
 }
 
 ::selection {
-	color: $terminal;
-	background: $dark;
-}
-
-ul {
+	color: $black;
+	background: $green;
 }
 
 h1:not(header *),
 h2,
-h3 {
-	// @include cornered();
-
+h3,
+h4,
+h5,
+h6 {
 	color: $yellow;
-	margin-top: $space-lg;
+	margin-top: $space-md;
 	margin-bottom: $space-sm;
 
 	&:first-child {
@@ -66,22 +80,37 @@ h3 {
 
 h1:not(header *) {
 	&::before {
-		content: '>_ #';
-		margin-right: $space-sm;
+		content: '>_ # ';
 	}
 }
 
 h2 {
 	&::before {
-		content: '>_ ##';
-		margin-right: $space-sm;
+		content: '>_ ## ';
 	}
 }
 
 h3 {
 	&::before {
-		content: '>_ ###';
-		margin-right: $space-sm;
+		content: '>_ ### ';
+	}
+}
+
+h4 {
+	&::before {
+		content: '>_ #### ';
+	}
+}
+
+h5 {
+	&::before {
+		content: '>_ ##### ';
+	}
+}
+
+h6 {
+	&::before {
+		content: '>_ ###### ';
 	}
 }
 
@@ -103,9 +132,7 @@ p {
 	margin-bottom: $space-sm;
 
 	&::before {
-		content: '>_';
-		// color: $accent;
-		margin-right: $space-sm;
+		content: '>_ ';
 	}
 
 	&:first-child {
@@ -118,86 +145,46 @@ p {
 }
 
 a {
-	color: $terminal;
+	color: $green;
 	text-decoration: none;
-
-	text-decoration: none;
-	// text-decoration-style: dashed;
-	border-bottom: 1px dashed rgba($terminal, 1);
+	border-bottom: 1px dashed rgba($green, 1);
 
 	&:hover {
-		background-color: $accent;
+		background-color: $red;
+		color: $white;
 		border-bottom: none;
-		color: $light;
-		text-decoration: none;
 	}
 }
 
 table {
-	// border-collapse: collapse;
-	border-spacing: $space-sm;
-	border-bottom: 1px solid $terminal;
-	text-align: left;
 	border-collapse: separate;
-	border-spacing: $space-sm $space-sm;
+	border-spacing: $space-sm;
+	border-bottom: 1px solid $green;
+	text-align: left;
+	word-break: break-all;
+
+	th,
+	td {
+		padding: $space-sm;
+	}
 
 	th {
-		@include cornered();
-		border: 0.5px dashed rgba($terminal, 0.2);
-
-		color: $terminal;
-		padding: $space-sm;
-
-		div {
-		}
+		@include corners();
+		border: $border;
+		color: $green;
+		vertical-align: middle;
 	}
+
 	td {
-		// border-left: 1px solid $terminal;
-		// border-right: 1px solid $terminal;
-		padding: $space-sm;
+		border: $border;
 	}
 
 	tr {
-		td {
-			border: 0.5px dashed rgba($terminal, 0.2);
-			padding: $space-sm $space-sm;
-		}
-
 		&:hover {
-			color: $terminal;
+			color: $green;
 			td {
-				@include cornered();
+				@include corners();
 			}
 		}
 	}
-}
-
-.app {
-	display: flex;
-	flex-direction: column;
-	height: calc(100vh);
-	overflow: scroll;
-	padding: $space-md;
-	display: grid;
-	grid-template-columns: minmax(10%, min-content) 1fr;
-	grid-template-rows: min-content 1fr;
-	gap: $space-md $space-md;
-	grid-template-areas:
-		'header header'
-		'nav main';
-}
-
-.squared {
-	background:
-		linear-gradient(to right, $terminal 1px, transparent 1px) 0 0,
-		linear-gradient(to right, $terminal 1px, transparent 1px) 0 100%,
-		linear-gradient(to left, $terminal 1px, transparent 1px) 100% 0,
-		linear-gradient(to left, $terminal 1px, transparent 1px) 100% 100%,
-		linear-gradient(to bottom, $terminal 1px, transparent 1px) 0 0,
-		linear-gradient(to bottom, $terminal 1px, transparent 1px) 100% 0,
-		linear-gradient(to top, $terminal 1px, transparent 1px) 0 100%,
-		linear-gradient(to top, $terminal 1px, transparent 1px) 100% 100%;
-	background-repeat: no-repeat;
-	background-size: 10px 10px;
-	padding: $space-md $space-sm;
 }

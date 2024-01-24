@@ -1,5 +1,7 @@
 <script>
 	import { page } from '$app/stores';
+
+	export let links = [];
 </script>
 
 <nav>
@@ -7,17 +9,21 @@
 		{#if $page.url.pathname !== '/'}
 			<li class="back"><a href="/">back</a></li>
 		{/if}
-		<slot />
+		{#each links as { name, path }, i}
+			<li class={$page.url.pathname === path ? 'active' : ''}>
+				<a href={path}>{name}</a>
+			</li>
+		{/each}
 	</ul>
 </nav>
 
 <style lang="scss">
 	nav {
-		@include cornered();
-		@include section('nav');
-		@include padded();
-		border: 0.5px dashed rgba($terminal, 0.2);
+		@include frame('nav');
 		grid-area: nav;
+		height: initial;
+		width: initial;
+		overflow: scroll;
 	}
 
 	:global(nav > ul > li) {
@@ -28,13 +34,25 @@
 		}
 
 		&::before {
-			content: '↦ ';
-			color: $terminal;
+			content: '>> ';
+			color: $green;
 		}
 
 		&.back {
+			a {
+				border-bottom: none;
+			}
+
 			&::before {
-				content: '↤ ';
+				content: '<< ';
+			}
+		}
+
+		&.active {
+			a {
+				border-bottom: none;
+				background-color: $green;
+				color: $white;
 			}
 		}
 	}

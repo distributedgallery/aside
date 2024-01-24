@@ -1,16 +1,13 @@
-<header class="squared">
+<header>
 	<h1>
-		<span>>_ distributed@gallery</span> >_ aside·eth
+		<span>>_ distributed@gallery</span>
+		>_ <slot />
 	</h1>
 </header>
 
 <style lang="scss">
 	header {
-		// margin-bottom: $space-lg;
-
-		@include section('header');
-		border: 0.5px dashed rgba($terminal, 0.2);
-
+		@include frame('header');
 		grid-area: header;
 
 		h1 {
@@ -18,12 +15,12 @@
 			width: fit-content;
 
 			span {
-				color: $terminal;
+				color: $green;
 			}
 
 			&::after {
 				content: '';
-				background: $accent;
+				background: $red;
 				display: inline-block;
 				height: 1.2em;
 				width: 5px;
