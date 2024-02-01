@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres';
+import { createClient } from '@vercel/postgres';
 import needle from 'needle';
 
 const ENDPOINT = 'https://api.twitter.com/2/tweets/counts/recent';
@@ -49,6 +49,9 @@ function isAuthorized(request) {
 }
 
 export default async function handler(request, response) {
+	const client = createClient();
+	await client.connect();
+
 	try {
 		if (!isAuthorized(request)) {
 			return response.status(401).json({ error: 'Unauthorized request' });
@@ -62,7 +65,7 @@ export default async function handler(request, response) {
 		}
 
 		const sentiment = (pros / (pros + cons)).toFixed(2) * 100;
-		await sql`INSERT INTO Sentiments (timestamp, sentiment, query_pro, query_con) VALUES (CURRENT_TIMESTAMP, ${sentiment}, ${query(PROS)}, ${query(CONS)});`;
+		await client.sql`INSERT INTO Sentiments (timestamp, sentiment, query_pro, query_con) VALUES (CURRENT_TIMESTAMP, ${sentiment}, ${query(PROS)}, ${query(CONS)});`;
 
 		return response
 			.status(200)
@@ -70,5 +73,7 @@ export default async function handler(request, response) {
 	} catch (error) {
 		console.log(error);
 		return response.status(500).json({ error: error.message });
+	} finally {
+		await client.end();
 	}
 }

@@ -1,13 +1,20 @@
-import { createPool } from '@vercel/postgres';
-import { POSTGRES_URL } from '$env/static/private';
+import { createClient } from '@vercel/postgres';
 
 export const csr = false;
 
 export async function load() {
-	const db = createPool({ connectionString: POSTGRES_URL });
-	const { rows: sentiments } = await db.query('SELECT * FROM Sentiments ORDER BY timestamp DESC;');
+	const client = createClient();
+	await client.connect();
 
-	return {
-		sentiments
-	};
+	try {
+		const { rows: sentiments } = await client.sql`
+			SELECT * FROM Sentiments ORDER BY timestamp DESC;`;
+		return {
+			sentiments
+		};
+	} catch (error) {
+		console.error(error);
+	} finally {
+		await client.end();
+	}
 }
