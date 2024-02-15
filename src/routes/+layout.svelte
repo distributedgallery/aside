@@ -13,7 +13,7 @@
 	<Header>aside·eth</Header>
 	<Nav
 		links={[
-			{ name: 'Obvious x Ivona Tau', path: '/0x01' },
+			{ name: 'Obvious x Ivona Tau', path: '/0x01/1' },
 			{ name: 'Anna Ridler', path: '/0x02' }
 		]}
 	/>
