@@ -4,11 +4,11 @@
 
 <section>
 	<h1>Obvious x Ivona Tau</h1>
-
 	<p>
 		Obvious and Ivona Tau have chosen to collaborate on a series of artworks whose content and
 		unlock is related to the public sentiment over AI.
 	</p>
+	<p>Coming in May 2024.</p>
 
 	<h2>The public AI sentiment</h2>
 	<p>

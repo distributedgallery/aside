@@ -6,62 +6,55 @@
 <section>
 	<h1>Introduction</h1>
 	<p>
-		aside·eth is a time-lock protocol for the contemporary digital art world, based on the
-		collaboration of the distributed gallery, the <a href="https://verse.works" target="_blank"
-			>verse marketplace</a
-		>
-		and various digital artists.
+		[aside·eth] is a time-lock protocol for the contemporary digital art world, based on the
+		collaboration of the <a href="https://distributedgallery.art" target="_blank"
+			>distributed gallery</a
+		>, the <a href="https://verse.works" target="_blank">verse marketplace</a>
+		and various digital artists. It consists of a protocol that enables the immobilization of any NFT
+		on the Ethereum blockchain and conditions its release to external phenomena, whether natural (forest,
+		fishery, earthquake, storm), astral (solar eruption, planetary transit), economic (inflation, deflation),
+		financial (stock market), demographic, or social. Once time-locked, these NFTs remain non-transferable
+		for a dedicated period of time or until a specific real-world event happens, therefore restricting
+		the tradability of the artwork by tying its commercial becoming to the outside world.
 	</p>
 	<p>
-		Aside is a protocol that enables the immobilization of any NFT on the Ethereum blockchain and
-		conditions its release to external phenomena, whether natural, astral, economic, demographic, or
-		social. Once time-locked, the artwork remains non-transferable for a dedicated period or until
-		the occurrence of a specific real-world event, therefore restricting the tradability of the NFTs
-		by tying its commercial becoming to the outside world.
-	</p>
-	<p>
-		Aside is about extracting an NFT from market mechanisms. It is about restoring a stillness
+		[aside·eth] is about extracting NFTs from market mechanisms. It is about restoring a stillness
 		outside the flow of exchange. It is about reclaiming a presence subtracted from its economic
 		specters: aside from markets, aside from speculation, aside from value.
 	</p>
+
+	<h1>[aside·eth] and the flesh of the World</h1>
 	<p>
-		Through this protocol, we aim to introduce a fresh perspective on digital artworks, ushering in
-		a new era in the realm of crypto-art. Aside is a strings game where work of art are putting away
-		from market forces for a given period and in certain knottiness with non-human things. Because
-		with our protocol the merchandise future of an artwork is caught in the net of the outside world
-		we hope to open up a new way of looking at the digital art and the off-chain realities in which
-		they are embedded.
-	</p>
-	<h1>Aside and the flesh of the World</h1>
-	<p>
-		Aside aims to act as the stitching point between phenomena that are ordinarily separated by
-		linking artworks liquidity to natural, economic, astral, or social events through the use of
-		oracles. Thanks to oracle technologies the economic life cycle of artworks and the world's life
-		become truly interdependent.
+		[aside·eth] aims to act as the stitching point between phenomena that are ordinarily separated,
+		by linking artworks liquidity to outside world events, through the use of oracle technologies.
+		Thus, the economic lifecycle of an artwork and the world's life become truly interdependent.
 	</p>
 	<p>
-		With Aside, the trading possibilities of an artwork are closely linked to the state of a natural
-		resource (forest, fishery), the economic situation of a country (inflation, deflation), the
-		evolution of financial asset (stock market), meteorological conditions in a given location,
-		astral phenomena (solar eruption, planetary transit) observable from Earth, or the emergence of
-		natural disasters (earthquake, storm).
-	</p>
-	<p>
-		Aside aim to drastically alter the experience of possession by inoculating in it a consonant
-		relationship with off chain realities. A troubled experience of possession emerges because it is
-		the more-than-human who is first and foremost the very owner of the work, the more-than-human
-		that animates and haunts both the artwork and the owner.
+		[aside·eth] aims to drastically alter the experience of ownership by inoculating a consonant
+		relationship with off chain realities into it. Thus, the more-than-human becomes the first and
+		foremost owner of the artwork, that animates and haunts both this artwork and its economic
+		owner.
 	</p>
 
 	<h1>Roadmap</h1>
 	<p>
-		Starting from **May 2024 and ending in May 2025**, we will publish and sell, during **the first
-		week of each month** on The Verse, a series of artworks by an artist who uses Aside to **remove
-		his/her work from the market by conditioning its potential release on a specific phenomenon**.
-		This will showcase, month after month, the potential applications of the Aside protocol.
+		[aside·eth] drops will <span class="italic">start in May 2024</span> and
+		<span class="italic">end in May 2025</span>.
 	</p>
 	<p>
-		Physical exhibitions of these works will take place in several institutions throughout the
-		United States and Europe.
+		These drops will showcase, month after month, the potential applications of the [aside·eth]
+		protocol.
 	</p>
+
+	<p>
+		Each drop will be published during <span class="italic">the first week of each month</span>
+		on <a href="https://verse.works" target="_blank">verse.works</a>.
+	</p>
+
+	<h2>Exhibitions</h2>
+	<p>
+		Physical exhibitions of [aside·eth] artworks will take place in several institutions throughout
+		the United States and Europe.
+	</p>
+	<p>More informations coming soon.</p>
 </section>
