@@ -1,5 +1,7 @@
 import aisentiment from '../../src/lib/aisentiment.js';
 
+export const dynamic = 'force-dynamic';
+
 export default async function handler(request, response) {
 	try {
 		response
