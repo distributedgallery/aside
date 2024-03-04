@@ -9,13 +9,15 @@
 		[aside·eth] is a time-lock protocol for the contemporary digital art world, based on the
 		collaboration of the <a href="https://distributedgallery.art" target="_blank"
 			>distributed gallery</a
-		>, the <a href="https://verse.works" target="_blank">verse marketplace</a>
-		and various digital artists. It consists of a protocol that enables the immobilization of any NFT
-		on the Ethereum blockchain and conditions its release to external phenomena, whether natural (forest,
-		fishery, earthquake, storm), astral (solar eruption, planetary transit), economic (inflation, deflation),
-		financial (stock market), demographic, or social. Once time-locked, these NFTs remain non-transferable
-		for a dedicated period of time or until a specific real-world event happens, therefore restricting
-		the tradability of the artwork by tying its commercial becoming to the outside world.
+		>, the <a href="https://verse.works" target="_blank">verse marketplace</a>,
+		<a href="https://georgbak.art" target="_blank">Georg Bak</a>'s curation and various digital
+		artists. It consists of a protocol that enables the immobilization of any NFT on the Ethereum
+		blockchain and conditions its release to external phenomena, whether natural (forest, fishery,
+		earthquake, storm), astral (solar eruption, planetary transit), economic (inflation, deflation),
+		financial (stock market), demographic, or social. Once time-locked, these NFTs remain
+		non-transferable for a dedicated period of time or until a specific real-world event happens,
+		therefore restricting the tradability of the artwork by tying its commercial becoming to the
+		outside world.
 	</p>
 	<p>
 		[aside·eth] is about extracting NFTs from market mechanisms. It is about restoring a stillness
