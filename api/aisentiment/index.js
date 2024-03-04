@@ -4,6 +4,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function handler(request, response) {
 	try {
+		console.log(request);
 		response
 			// .setHeader('Access-Control-Allow-Credentials', true)
 			.setHeader('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
