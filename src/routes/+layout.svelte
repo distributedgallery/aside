@@ -10,6 +10,11 @@
 	inject({ mode: dev ? 'development' : 'production' });
 </script>
 
+<svelte:head>
+	<title>aside·eth</title>
+	<meta name="description" content="aside·eth" />
+</svelte:head>
+
 <div class="app">
 	<Header>aside·eth</Header>
 	<Nav links={$page.data.links} />
