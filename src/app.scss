@@ -22,7 +22,6 @@ body {
 	color: $white;
 	font-family: 'Supply Mono', monospace;
 	font-size: 14px;
-
 	font-weight: 400;
 
 	@media only screen and (min-width: 760px) {
@@ -147,6 +146,7 @@ p {
 
 a {
 	color: $green;
+	cursor: pointer;
 	text-decoration: none;
 	border-bottom: 1px dashed rgba($green, 1);
 

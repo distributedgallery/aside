@@ -3,7 +3,6 @@
 
 # node
 node_modules
-package
 
 # svelte
 build
@@ -12,13 +11,10 @@ build
 # env
 .env
 .env.*
-!.env.example
 
 # vercel
 .vercel
 .output
 
-# PNPM, NPM and YARN
-pnpm-lock.yaml
+# NPM
 package-lock.json
-yarn.lock

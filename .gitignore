@@ -3,7 +3,6 @@
 
 # node
 node_modules
-package
 
 # svelte
 build
@@ -12,12 +11,7 @@ build
 # env
 .env
 .env.*
-!.env.example
 
 # vercel
 .vercel
 .output
-
-# vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*

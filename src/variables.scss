@@ -3,7 +3,6 @@ $white: #ffffff;
 $red: #ff1c65;
 $green: #2fc4b4;
 $yellow: #ecc48d;
-$blue: #1864ab;
 $space-sm: 0.5rem;
 $space-md: 1rem;
 $space-lg: 2rem;
@@ -22,13 +21,7 @@ $border: 0.5px dashed rgba($green, 0.4);
 }
 
 @mixin scanlines {
-	background: repeating-linear-gradient(
-		0deg,
-		rgba($green, 0.15),
-		rgba($green, 0.15) 1px,
-		transparent 1px,
-		transparent 2px
-	);
+	background: repeating-linear-gradient(0deg, rgba($green, 0.15), rgba($green, 0.15) 1px, transparent 1px, transparent 2px);
 	content: '';
 	height: 100vh;
 	width: 100vw;
@@ -44,15 +37,6 @@ $border: 0.5px dashed rgba($green, 0.4);
 	border: $border;
 	position: relative;
 	padding: $space-md $space-sm;
-
-	// &::before {
-	// 	content: '>_{' + $title + '}';
-	// 	color: $yellow;
-	// 	font-size: 0.7rem;
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 15px;
-	// }
 }
 
 @mixin corners($size: 10px, $where: all) {

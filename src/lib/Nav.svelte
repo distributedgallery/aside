@@ -9,7 +9,7 @@
 		{#if $page.url.pathname !== '/'}
 			<li class="back"><a href="/">back</a></li>
 		{/if}
-		{#each links as { name, path }, i}
+		{#each links as { name, path }}
 			<li class={$page.url.pathname === path ? 'active' : ''}>
 				<a href={path}>{name}</a>
 			</li>

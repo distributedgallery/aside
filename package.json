@@ -1,5 +1,6 @@
 {
 	"name": "@distributedgallery/aside",
+	"author": "Distributed Gallery <contact@distributedgallery.art>",
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
@@ -13,10 +14,11 @@
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@vercel/analytics": "^1.1.2",
-		"@vercel/postgres": "^0.5.1",
+		"@vercel/kv": "^1.0.1",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.36.0-next.4",
+		"ethers": "^6.11.1",
 		"needle": "^3.3.1",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",

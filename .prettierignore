@@ -1,4 +1,2 @@
-# PNPM, NPM and YARN
-pnpm-lock.yaml
+# NPM
 package-lock.json
-yarn.lock

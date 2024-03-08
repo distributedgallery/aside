@@ -1,17 +1,9 @@
-import { createClient } from '@vercel/postgres';
+import { kv } from '@vercel/kv';
 import needle from 'needle';
 
 const ENDPOINT = 'https://api.twitter.com/2/tweets/counts/recent';
 const PROS = ['#AIPositive', '#AIForGood', '#AIOptimism', '#AIHope'];
-const CONS = [
-	'#AIConcerns',
-	'#AIThreat',
-	'#AIFears',
-	'#AIEthics',
-	'#AIDystopia',
-	'#AIUnemployment',
-	'#AIWar'
-];
+const CONS = ['#AIConcerns', '#AIThreat', '#AIFears', '#AIEthics', '#AIDystopia', '#AIUnemployment', '#AIWar'];
 
 function query(hashtags) {
 	let q = '';
@@ -49,9 +41,6 @@ function isAuthorized(request) {
 }
 
 export default async function handler(request, response) {
-	const client = createClient();
-	await client.connect();
-
 	try {
 		if (!isAuthorized(request)) {
 			return response.status(401).json({ error: 'Unauthorized request' });
@@ -65,15 +54,12 @@ export default async function handler(request, response) {
 		}
 
 		const sentiment = (pros / (pros + cons)).toFixed(2) * 100;
-		await client.sql`INSERT INTO Sentiments (timestamp, sentiment, query_pro, query_con) VALUES (CURRENT_TIMESTAMP, ${sentiment}, ${query(PROS)}, ${query(CONS)});`;
+		const timestamp = Date.now();
+		await kv.set('aisentiment', { sentiment, timestamp });
 
-		return response
-			.status(200)
-			.json({ sentiment: sentiment, query_pro: query(PROS), query_con: query(CONS) });
+		return response.status(200).json({ sentiment, timestamp });
 	} catch (error) {
 		console.log(error);
 		return response.status(500).json({ error: error.message });
-	} finally {
-		await client.end();
 	}
 }
