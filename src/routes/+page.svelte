@@ -1,8 +1,3 @@
-<svelte:head>
-	<title>aside·eth</title>
-	<meta name="description" content="aside·eth" />
-</svelte:head>
-
 <section>
 	<h1>Introduction</h1>
 	<p>
